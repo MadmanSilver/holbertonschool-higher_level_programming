@@ -10,25 +10,30 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int len, i;
-	listint_t *p = *head, *p2 = *head;
+	int len, i, n, offset = 0;
+	listint_t *p = *head;
 
 	if (*head == NULL)
 		return (1);
 
-	for (len = 0; p2->next != NULL; len++)
-		p2 = p2->next;
+	n = p->n;
 
-	while (p->n == p2->n)
-	{
-		len--;
+	for (len = 0; p->next != NULL; len++)
 		p = p->next;
-		p2 = *head;
-		for (i = 0; i < len; i++)
-			p2 = p2->next;
-		if (len == 0)
+
+	while (p->n == n)
+	{
+		offset++;
+		p = *head;
+		for (i = 0; i < len - offset; i++)
+		{
+			if (i == offset)
+				n = p->n;
+			p = p->next;
+		}
+		if (offset > len / 2)
 			return (1);
-		printf("p->n = %d, p2->n = %d\n", p->n, p2->n);
+		printf("p->n = %d, n = %d\n", p->n, n);
 	}
 
 	return (0);
