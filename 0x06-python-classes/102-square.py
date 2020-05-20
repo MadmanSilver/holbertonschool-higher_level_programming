@@ -49,16 +49,16 @@ class Square:
 
     def __le__(self, other):
         """less than or equal to comparison"""
-        return self.area() < other.area()
+        return self.area() <= other.area()
 
     def __ne__(self, other):
         """not equal to comparison"""
-        return self.area() == other.area()
+        return self.area() != other.area()
 
     def __gt__(self, other):
         """greater than comparison"""
-        return self.area() < other.area()
+        return self.area() > other.area()
 
     def __ge__(self, other):
         """greater than or equal to comparison"""
-        return self.area() == other.area()
+        return self.area() >= other.area()
