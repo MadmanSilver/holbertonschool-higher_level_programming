@@ -5,7 +5,7 @@ class MagicClass:
         """Initializes radius
 
         Args:
-            radius (int): radius of circle
+            radius (int, float): radius of circle
         """
         self.__radius = 0
         if type(radius) is not int and type(radius) is not float:
