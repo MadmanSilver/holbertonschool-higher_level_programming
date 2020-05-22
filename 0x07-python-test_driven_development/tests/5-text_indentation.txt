@@ -1,0 +1,81 @@
+The ``5-text_indentation`` module
+======================
+
+Using ``text_indentation``
+-------------------
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+    >>> text_indentation("y.e.s.")
+    y.
+    <BLANKLINE>
+    e.
+    <BLANKLINE>
+    s.
+    <BLANKLINE>
+
+    >>> text_indentation("y.e?s:")
+    y.
+    <BLANKLINE>
+    e?
+    <BLANKLINE>
+    s:
+    <BLANKLINE>
+
+    >>> text_indentation("y..s")
+    y.
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    s
+
+    >>> text_indentation("y.e.s. ")
+    y.
+    <BLANKLINE>
+    e.
+    <BLANKLINE>
+    s.
+    <BLANKLINE>
+
+    >>> text_indentation("y.e. s.")
+    y.
+    <BLANKLINE>
+    e.
+    <BLANKLINE>
+    s.
+    <BLANKLINE>
+
+    >>> text_indentation("y.e.  s.")
+    y.
+    <BLANKLINE>
+    e.
+    <BLANKLINE>
+    s.
+    <BLANKLINE>
+
+    >>> text_indentation("yes")
+    yes
+
+    >>> text_indentation(".yes")
+    .
+    <BLANKLINE>
+    yes
+
+    >>> text_indentation(".")
+    .
+    <BLANKLINE>
+
+    >>> text_indentation("..")
+    .
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+
+    >>> text_indentation("")
+
+    >>> text_indentation(11)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
