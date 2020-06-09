@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Contains the Base class. """
 import json
-from models import Square
 
 
 class Base():
@@ -43,7 +42,7 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """ Returns an instance with all attributes already set. """
-        if cls is Square:
+        if cls.__name__ == "Square":
             new = cls(1)
         else:
             new = cls(1, 1)
