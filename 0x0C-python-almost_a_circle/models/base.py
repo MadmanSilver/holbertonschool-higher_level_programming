@@ -24,7 +24,7 @@ class Base():
     @classmethod
     def save_to_file(cls, list_objs):
         """ Writes the JSON string representation of list_bjs to a file. """
-        if len(list_objs) > 0:
+        if list_objs and len(list_objs) > 0:
             objs = list_objs.copy()
             for i in range(len(objs)):
                 objs[i] = objs[i].to_dictionary()
