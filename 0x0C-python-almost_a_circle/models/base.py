@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Contains the Base class. """
 import json
+from models import Square
 
 
 class Base():
