@@ -42,7 +42,10 @@ class Base():
     @classmethod
     def create(cls, **dictionary):
         """ Returns an instance with all attributes already set. """
-        new = cls(1, 1)
+        if cls is Square:
+            new = cls(1)
+        else:
+            new = cls(1, 1)
         new.update(**dictionary)
         return new
 
