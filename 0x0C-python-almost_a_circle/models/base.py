@@ -9,7 +9,7 @@ class Base():
 
     def __init__(self, id=None):
         """ Initializes the attributes. """
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nd_objects += 1
