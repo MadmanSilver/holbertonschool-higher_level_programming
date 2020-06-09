@@ -56,7 +56,7 @@ class Base():
         """ Returns a list of instances. """
         try:
             with open("{}.json".format(cls.__name__), 'r') as f:
-                l = json.loads(f.read())
+                l = cls.from_json_string(f.read())
                 for i in range(len(l)):
                     l[i] = cls.create(**l[i])
         except:
