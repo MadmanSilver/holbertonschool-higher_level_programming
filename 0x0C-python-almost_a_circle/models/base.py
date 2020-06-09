@@ -33,6 +33,7 @@ class Base():
         with open("{}.json".format(cls.__name__), 'w') as f:
             f.write(cls.to_json_string(objs))
 
+    @staticmethod
     def from_json_string(json_string):
         """ Returns the list of the JSON string representation. """
         if not json_string or len(json_string) < 1:
