@@ -52,7 +52,8 @@ class Base():
     @classmethod
     def load_from_file(cls):
         """ Returns a list of instances. """
-        with open("{}.json".format(cls.__name__)) as f:
+        l = []
+        with open("{}.json".format(cls.__name__), 'r') as f:
             l = json.loads(f.read())
             for i in range(len(l)):
                 l[i] = cls.create(**l[i])
