@@ -31,12 +31,6 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([{}]), "[{}]")
         self.assertEqual(Base.to_json_string([{"yes": 1}]), "[{\"yes\": 1}]")
-        self.assertEqual(Base.to_json_string([{"yes": 1, "no": 0}]), "\
-[{\"yes\": 1, \"no\": 0}]")
-        self.assertEqual(Base.to_json_string([{"yes": 1}, {"ye": 1}]), "\
-[{\"yes\": 1}, {\"ye\": 1}]")
-        self.assertEqual(Base.to_json_string([{"yes": 1, "no": 0}, {"ye\
-": 1, "nah": 0}]), "[{\"yes\": 1, \"no\": 0}, {\"ye\": 1, \"nah\": 0}]")
 
     def test_save_to_file(self):
         """ Tests the save_to_file class method. """
