@@ -12,6 +12,7 @@ cities.state_id=states.id WHERE states.name=%(state)s ORDER BY cities.id \
 ASC", {'state': sys.argv[4]})
     query_rows = cur.fetchall()
     for i in range(len(query_rows)):
-        print(query_rows[i][0], end="\n" if i == len(query_rows) - 1 else ", ")
+        print(query_rows[i][0], end="" if i == len(query_rows) - 1 else ", ")
+    print()
     cur.close()
     conn.close()
