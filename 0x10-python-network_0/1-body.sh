@@ -1,3 +1,3 @@
 #!/bin/bash
 # send GET request and display
-curl -fL "$1"
+curl -L "$1"
