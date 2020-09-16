@@ -10,4 +10,13 @@ args.forEach(element => {
   }
 });
 
+if (big === parseInt(args[2])) {
+  big2 = parseInt(args[3]);
+  args.forEach(element => {
+    if (parseInt(element) !== big && parseInt(element) > big2) {
+      big2 = parseInt(element);
+    }
+  });
+}
+
 console.log(big2);
