@@ -11,9 +11,11 @@ request(process.argv[2], function (err, res, body) {
   const json = JSON.parse(body);
 
   json.results.forEach(film => {
-    if (film.characters.includes('https://swapi-api.hbtn.io/api/people/18/')) {
-      count++;
-    }
+    film.characters.forEach(character => {
+      if (character.includes('18')) {
+        count++;
+      }
+    });
   });
 
   console.log(count);
